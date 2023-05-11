@@ -1,0 +1,21 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: service-test-deployment
+  labels:
+    app: servicetest
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: servicetest
+  template:
+    metadata:
+      labels:
+        app: servicetest 
+    spec:
+      containers:
+      - name: service-test
+        image: 501065431094.dkr.ecr.us-east-2.amazonaws.com/service-test:latest
+        ports:
+        - containerPort: 5000   
