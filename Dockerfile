@@ -9,7 +9,7 @@ RUN go mod download
 COPY cmd /build/cmd
 COPY app /build/app
 
-RUN cd cmd && env GOOS=linux GOARCH=arm go build -o kuber
+RUN cd cmd && env go build -o kuber
 
 
 FROM gcr.io/distroless/static:nonroot
