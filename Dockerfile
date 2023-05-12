@@ -20,6 +20,6 @@ COPY --from=busybox /bin/sh /bin/sh
 WORKDIR /app
 COPY --from=build ./build/cmd/kuber ./build/config/service-config.yaml /app/
 
-ENTRYPOINT [ "/bin/sh" "./kuber" ]
+ENTRYPOINT [ "./kuber" ]
 
 
