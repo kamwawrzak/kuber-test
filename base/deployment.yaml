@@ -25,4 +25,4 @@ spec:
       volumes:
       - name: config
         configMap:
-          name: service-configmap
+          name: service-configmap-files

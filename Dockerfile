@@ -11,6 +11,7 @@ COPY app /build/app
 
 RUN cd cmd && env go build -o kuber
 
+FROM busybox:1.35.0-uclibc as busybox
 
 FROM gcr.io/distroless/static:nonroot
 
