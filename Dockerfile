@@ -11,11 +11,12 @@ COPY app /build/app
 
 RUN cd cmd && env go build -o kuber
 
-FROM busybox:1.35.0-uclibc as busybox
+#FROM busybox:1.35.0-uclibc as busybox
 
-FROM gcr.io/distroless/static:nonroot
-
-COPY --from=busybox /bin/sh /bin/sh
+#FROM gcr.io/distroless/static:nonroot
+FROM ubuntu:latest
+#COPY --from=busybox /bin/sh /bin/sh
+#RUN /bin/bash -c 'source /opt/ros/melodic/setup.bash'
 
 WORKDIR /app
 COPY --from=build ./build/cmd/kuber ./build/config/service-config.yaml /app/
