@@ -12,7 +12,7 @@ COPY app /build/app
 RUN cd cmd && env go build -o kuber
 
 
-FROM gcr.io/distroless/static:nonroot
+FROM alpine:latest
 
 WORKDIR /app
 COPY --from=build ./build/cmd/kuber ./build/config/service-config.yaml /app/

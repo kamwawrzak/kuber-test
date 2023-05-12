@@ -19,7 +19,7 @@ spec:
         image: 501065431094.dkr.ecr.us-east-2.amazonaws.com/service-test:latest
         volumeMounts:
         - name: config
-          mountPath: /config
+          mountPath: /app
         ports:
         - containerPort: 5000
       volumes:
