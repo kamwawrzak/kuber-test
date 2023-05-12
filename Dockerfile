@@ -12,11 +12,13 @@ COPY app /build/app
 RUN cd cmd && env go build -o kuber
 
 
-FROM alpine:latest
+FROM gcr.io/distroless/static:nonroot
+
+COPY --from=busybox /bin/sh /bin/sh
 
 WORKDIR /app
 COPY --from=build ./build/cmd/kuber ./build/config/service-config.yaml /app/
 
-ENTRYPOINT [ "./kuber" ]
+ENTRYPOINT [ "/bin/sh" "./kuber" ]
 
 
