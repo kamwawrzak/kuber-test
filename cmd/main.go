@@ -22,6 +22,10 @@ func main(){
 		}
 	}()
 
-	log.Printf("prt :%v", cfg.Port)
+	log.Printf("port :%v", cfg.Port)
+	log.Printf("rdbs user :%v", cfg.Rdbs.User)
+	log.Printf("rdbs password :%v", cfg.Rdbs.Password)
+	log.Printf("rdbs port :%v", cfg.Rdbs.Port)
+
 	wg.Wait()
 }

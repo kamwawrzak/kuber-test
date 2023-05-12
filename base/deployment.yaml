@@ -17,5 +17,12 @@ spec:
       containers:
       - name: service-test
         image: 501065431094.dkr.ecr.us-east-2.amazonaws.com/service-test:latest
+        volumeMounts:
+        - name: config
+          mountPath: /config
         ports:
-        - containerPort: 5000   
+        - containerPort: 5000
+      volumes:
+      - name: config
+        configMap:
+          name: service-configmap

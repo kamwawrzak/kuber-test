@@ -1,0 +1,6 @@
+resources:
+- deployment.yaml
+configMapGenerator:
+- name: service-configmap
+  files:
+  - config-files/service-config.yaml

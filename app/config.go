@@ -24,9 +24,9 @@ type Config struct{
 }
 
 type RdbsConfig struct {
-	user string `validate:"nonzero"`
-	password string `validate:"nonzero"`
-	port int `validate:"nonzero"`
+	User string `validate:"nonzero"`
+	Password string `validate:"nonzero"`
+	Port int `validate:"nonzero"`
 }
 
 func getConfigfileName() (string, string) {

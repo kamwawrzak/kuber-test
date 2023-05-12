@@ -1,0 +1,6 @@
+service:
+  rdbs:
+    user: user1-from-deployment
+    port: 8098
+    password: 1234
+  port: 9809
