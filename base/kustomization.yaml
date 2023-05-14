@@ -2,8 +2,12 @@ resources:
 - deployment.yaml
 configMapGenerator:
 - name: service-configmap-files
+  behavior: create
   files:
   - config-files/service-config.yaml
-- name: service-configmap
+- name: service-config-env
+  behavior: create
   literals:
-  - SERVICE_CONFIG_FILE=config/service-configmap-files
+  - SERVICE_CONFIG_FILE=config/service-config.yaml
+  - RDBS_PORT=123
+  - SERVICE_PORT=789
