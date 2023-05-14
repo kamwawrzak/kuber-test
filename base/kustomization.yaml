@@ -9,5 +9,5 @@ configMapGenerator:
   behavior: create
   literals:
   - SERVICE_CONFIG_FILE=config/service-config.yaml
-  - RDBS_PORT=123
+  - SERVICE_RDBS_PORT=123
   - SERVICE_PORT=789

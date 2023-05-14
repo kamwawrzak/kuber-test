@@ -18,7 +18,7 @@ type configWrapper struct {
 }
 
 type Config struct{
-	Port int `yaml:"port" envconfig:"port"`
+	Port int `yaml:"port"`
 	Rdbs	RdbsConfig
 
 }
